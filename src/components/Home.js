@@ -57,9 +57,9 @@ function Home({
                       color="primary"
                       style={{ backgroundColor: '#ff5722' }}
                       component={Link}
-                      to={`/order/${pizza.id}`}
+                      to={`/add-to-cart/${pizza.id}`}
                     >
-                      Order Now
+                      Add to Cart
                     </Button>
                   </div>
                 </CardContent>

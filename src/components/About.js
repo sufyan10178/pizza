@@ -1,8 +1,11 @@
 import React from 'react';
 import { Container, Typography, Paper } from '@mui/material';
-
+import  useAuth  from './AuthContext';
 const About = () => {
+
+ 
   return (
+  
     <Container style={{ marginTop: 40, marginBottom: 40 }}>
       <Typography variant="h3" align="center" gutterBottom>
         About Us
@@ -21,8 +24,13 @@ const About = () => {
           We are dedicated to providing a warm and welcoming atmosphere for our customers, whether you dine in, take out, or order delivery. Thank you for choosing Pizza Inc., and we hope you enjoy every bite!
         </Typography>
       </Paper>
+      
     </Container>
+   
+     
   );
+ 
 };
+
 
 export default About;
