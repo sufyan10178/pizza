@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography, Paper } from '@mui/material';
-import  useAuth  from './AuthContext';
+// import  useAuth  from './AuthContext';
 const About = () => {
 
  

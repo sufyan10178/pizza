@@ -65,7 +65,7 @@ function Login() {
       if (storedData && storedData.email === formValues.email && storedData.password === formValues.password) {
         alert("Login successful!");
         localStorage.setItem('isLoggedIn', true);
-        navigate("/home");
+        navigate("/");
       } else {
         alert("Invalid email or password. Please try again.");
       }

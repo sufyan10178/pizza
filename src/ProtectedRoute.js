@@ -1,15 +1,3 @@
-// import React from 'react';
-// import { Navigate } from 'react-router-dom';
-// import  useAuth  from './components/AuthContext';
-
-// const ProtectedRoute = ({ element: Component, ...rest }) => {
-//   const { isLoggedIn } = useAuth();
-//   return isLoggedIn ? <Component {...rest} /> : <Navigate to="/login" />;
-// };
-
-// export default ProtectedRoute;
-
-// ProtectedRoute.js
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from './components/AuthContext';
@@ -17,12 +5,30 @@ import { useAuth } from './components/AuthContext';
 const ProtectedRoute = ({ children }) => {
   const { isLoggedIn } = useAuth();
 
-  return isLoggedIn ? children : <Navigate to="/login" />;
+  if(!isLoggedIn) {
+     return <Navigate to="/login" />;
+  }
+  return children;
 };
 
 export default ProtectedRoute;
 
 
+// import React, { useContext } from 'react';
+// import { Navigate } from 'react-router-dom';
+// import { useAuth } from './components/AuthContext';
+
+// const ProtectedRoute = ({ children }) => {
+//   const { isAuthenticated } = useContext(useAuth);
+
+//   if (!isAuthenticated) {
+//     return <Navigate to="/login" />;
+//   }
+
+//   return children;
+// };
+
+// export default ProtectedRoute;
 
 
 
