@@ -1,58 +1,37 @@
-// import React, { createContext, useState, useContext } from 'react';
+// import React from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { removeFromCart, updateQuantity } from './redux/cartSlice';
 
-// const CartContext = createContext();
+// const CartContext = () => {
+//   const dispatch = useDispatch();
+//   const cart = useSelector((state) => state.cart.cart);
 
-// export const useCart = () => useContext(CartContext);
+//   const handleRemove = (id) => {
+//     dispatch(removeFromCart(id));
+//   };
 
-// export const CartProvider = ({ children }) => {
-//   const [cart, setCart] = useState([]);
-
-//   const addToCart = (pizza) => {
-//     setCart((prevCart) => [...prevCart, pizza]);
+//   const handleQuantityChange = (id, quantity) => {
+//     dispatch(updateQuantity({ id, quantity }));
 //   };
 
 //   return (
-//     <CartContext.Provider value={{ cart, addToCart }}>
-//       {children}
-//     </CartContext.Provider>
+//     <div>
+//       <h1>Cart</h1>
+//       {cart.map((item) => (
+//         <div key={item.id}>
+//           <h2>{item.title}</h2>
+//           <p>Quantity: {item.quantity}</p>
+//           <button onClick={() => handleRemove(item.id)}>Remove</button>
+//           <button onClick={() => handleQuantityChange(item.id, item.quantity - 1)}>-</button>
+//           <button onClick={() => handleQuantityChange(item.id, item.quantity + 1)}>+</button>
+//         </div>
+//       ))}
+//     </div>
 //   );
 // };
-
-// import React, { createContext, useContext, useState } from 'react';
-
-// const CartContext = createContext();
-
-// export const CartProvider = ({ children }) => {
-//   const [cart, setCart] = useState([]);
-
-//   const addToCart = (pizza) => {
-//     setCart((prevCart) => [...prevCart, pizza]);
-//   };
-
-//   const removeFromCart = (pizzaId) => {
-//     setCart((prevCart) => prevCart.filter((pizza) => pizza.id !== pizzaId));
-//   };
-//   const updateQuantity = (pizzaId, newQuantity) => {
-//     setCart((prevCart) =>
-//       prevCart.map((pizza) =>
-//         pizza.id === pizzaId ? { ...pizza, quantity: newQuantity } : pizza
-//       )
-//     );
-//   };
-
-//   return (
-//     <CartContext.Provider value={{ cart, addToCart, removeFromCart , updateQuantity }}>
-//       {children}
-//     </CartContext.Provider>
-//   );
-// };
-
-// export const useCart = () => {
-//   return useContext(CartContext);
-// };
-
 
 // export default CartContext;
+
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
